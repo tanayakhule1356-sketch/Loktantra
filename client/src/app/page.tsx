@@ -15,6 +15,10 @@ export default function Home() {
     }, 2000);
   };
 
+  const handleAdminLogin = () => {
+    router.push('/admin');
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
@@ -31,7 +35,7 @@ export default function Home() {
           <button
             onClick={handleMetaMaskConnect}
             disabled={isConnecting}
-            className="w-full bg-blue-600 text-white py-4  rounded-lg font-semibold hover:bg-blue-700 active:bg-blue-800 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed flex items-center justify-center mb-6"
+            className="w-full bg-blue-600 text-white py-4  rounded-lg font-semibold hover:bg-blue-700 active:bg-blue-800 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed flex items-center justify-center mb-4"
           >
             {isConnecting ? (
               <>
@@ -44,6 +48,14 @@ export default function Home() {
                 Connect MetaMask Wallet
               </>
             )}
+          </button>
+
+          <button
+            onClick={handleAdminLogin}
+            className="w-full bg-gray-800 text-white py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors flex items-center justify-center mb-6 cursor-pointer"
+          >
+            <i className="fas fa-user-shield mr-2"></i>
+            Admin Login
           </button>
 
           <div className="relative mb-6">

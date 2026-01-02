@@ -1,6 +1,14 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 const AdminNavbar = () => {
+  const router = useRouter();
+
+  const handleSignOut = () => {
+    router.push('/');
+  };
+
   return (
     <nav className="bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -32,6 +40,13 @@ const AdminNavbar = () => {
               />
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
             </div>
+            <button
+              onClick={handleSignOut}
+              className="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors flex items-center gap-2 cursor-pointer"
+            >
+              <i className="fas fa-sign-out-alt"></i>
+              Sign Out
+            </button>
           </div>
         </div>
       </div>
